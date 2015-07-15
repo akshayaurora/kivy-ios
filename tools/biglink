@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-sofiles = [ ]
+sofiles = []
 
 for dir in sys.argv[2:]:
 

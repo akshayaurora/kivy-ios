@@ -33,9 +33,7 @@ class PillowRecipe(Recipe):
     def build_arch(self, arch):
         self.apply_patch('pil_setup.patch')
         build_env = self.get_pil_env(arch)
-        #build_dir = self.get_build_dir(arch.arch)
         hostpython = sh.Command(self.ctx.hostpython)
-        #build_env["PYTHONHOME"] = hostpython
         # first try to generate .h
         shprint(hostpython, "setup.py", "build_ext", "-g",
                 _env=build_env)
